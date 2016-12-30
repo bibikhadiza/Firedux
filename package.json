@@ -1,7 +1,26 @@
 {
-  "name": "firedux",
+  "name": "Firedux",
   "version": "0.1.0",
+  "description": "Start building complex React-Redux apps with Firebase using this simple starter kit (boilerplate)",
+  "author": "Raycent Tan",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/raycent/Firedux"
+  },
+  "license": "MIT",
   "private": true,
+  "dependencies": {
+    "immutable": "^3.8.1",
+    "material-ui": "^0.16.6",
+    "react": "^15.4.1",
+    "react-dom": "^15.4.1",
+    "react-redux": "^5.0.1",
+    "react-router": "^3.0.0",
+    "react-router-redux": "^4.0.7",
+    "react-tap-event-plugin": "^2.0.1",
+    "redux": "^3.6.0",
+    "redux-immutable": "^3.0.9"
+  },
   "devDependencies": {
     "autoprefixer": "6.6.0",
     "babel-core": "6.21.0",
@@ -45,18 +64,6 @@
     "webpack-dev-server": "1.16.2",
     "webpack-manifest-plugin": "1.1.0",
     "whatwg-fetch": "2.0.1"
-  },
-  "dependencies": {
-    "immutable": "^3.8.1",
-    "material-ui": "^0.16.6",
-    "react": "^15.4.1",
-    "react-dom": "^15.4.1",
-    "react-redux": "^5.0.1",
-    "react-router": "^3.0.0",
-    "react-router-redux": "^4.0.7",
-    "react-tap-event-plugin": "^2.0.1",
-    "redux": "^3.6.0",
-    "redux-immutable": "^3.0.9"
   },
   "scripts": {
     "start": "node scripts/start.js",
