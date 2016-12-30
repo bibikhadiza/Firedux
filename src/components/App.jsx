@@ -9,7 +9,7 @@ class App extends Component {
         <RaisedButton
           href="https://github.com/raycent/reactreduxfirebasestarter"
           target="_blank"
-          label="Welcome to React"
+          label="Welcome to Firedux"
           primary={true}
           icon={<FontIcon className="fa fa-github" />}
         />
