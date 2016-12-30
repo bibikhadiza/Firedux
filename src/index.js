@@ -3,16 +3,22 @@ import ReactDOM from 'react-dom';
 import { Provider } from "react-redux";
 import { Router } from "react-router";
 
-import { store, history } from "./store.js";
 import { routes } from "./router.js";
+import { store, history } from "./store.js";
+// Styling
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import injectTapEventPlugin from 'react-tap-event-plugin';
+injectTapEventPlugin();
 
 ReactDOM.render(
-  <Provider store={store}>
-    <Router
-      history={ history }
-      onUpdate={ () => window.scrollTo(0, 0) }
-      routes={ routes }
-    />
-  </Provider>,
+  <MuiThemeProvider>
+    <Provider store={store}>
+      <Router
+        history={ history }
+        onUpdate={ () => window.scrollTo(0, 0) }
+        routes={ routes }
+      />
+    </Provider>
+  </MuiThemeProvider>,
   document.getElementById('root')
 );
