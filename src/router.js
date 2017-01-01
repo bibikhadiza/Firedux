@@ -1,8 +1,11 @@
-import React from "react";
-import { Route } from "react-router";
+import React from 'react';
+import { Route, IndexRoute } from 'react-router';
 
-import App from './components/App';
+import AppContainer from './containers/AppContainer';
+import MainContainer from './containers/MainContainer';
 
 export const routes = (
-  <Route path="/" component={ App } />
+  <Route path="/" component={ AppContainer }>
+    <IndexRoute component={ MainContainer }/>
+  </Route>
 );

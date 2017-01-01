@@ -1,8 +1,10 @@
 import { combineReducers } from 'redux-immutable';
+import authReducer from './authReducer';
 import routing from './routing';
 
 const Reducers = combineReducers({
-    routing: routing,
+  auth: authReducer,
+  routing: routing
 });
 
 export default Reducers;

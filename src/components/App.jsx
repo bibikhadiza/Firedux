@@ -1,20 +1,31 @@
-import React, { Component } from 'react';
-import RaisedButton from 'material-ui/RaisedButton';
-import FontIcon from 'material-ui/FontIcon';
+import React, { Component, PropTypes } from 'react';
 
 class App extends Component {
+
+  static propTypes() {
+    return {
+      authStatus: PropTypes.string.isRequired,
+      uid: PropTypes.string,
+      userName: PropTypes.string
+    };
+  }
+
+  pageContent() {
+    return (React.cloneElement(this.props.children, {
+      key: this.props.location.pathname
+    }));
+  }
+
   render() {
-    return (
-      <div className="App">
-        <RaisedButton
-          href="https://github.com/raycent/reactreduxfirebasestarter"
-          target="_blank"
-          label="Welcome to Firedux"
-          primary={true}
-          icon={<FontIcon className="fa fa-github" />}
-        />
+    let content = (
+      <div>
+        <main>
+          { this.pageContent() }
+        </main>
       </div>
     );
+
+    return content;
   }
 }
 
