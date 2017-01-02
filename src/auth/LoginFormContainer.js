@@ -40,7 +40,7 @@ const mapDispatchToProps = dispatch => {
           break;
       }
 
-      C.FIREBASE.auth().signInWithPopup(authProvider);
+      C.FIREBASE.auth().signInWithRedirect(authProvider);
     }
   };
 };
