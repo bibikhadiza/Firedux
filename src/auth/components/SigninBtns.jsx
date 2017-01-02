@@ -1,5 +1,6 @@
 import React from 'react';
-require('./SigninBtns.scss');
+import CSSModules from 'react-css-modules';
+import styles from './SigninBtns.scss';
 
 const SigninBtns = props => {
   return (
@@ -47,4 +48,4 @@ const SigninBtns = props => {
   );
 };
 
-export default SigninBtns;
+export default CSSModules(SigninBtns, styles);

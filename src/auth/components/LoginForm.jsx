@@ -3,7 +3,8 @@ import C from '../constants';
 import SigninBtns from './SigninBtns';
 // Styling
 import { Card, CardActions, CardTitle, CardText } from 'material-ui/Card';
-require('./LoginForm.scss');
+import CSSModules from 'react-css-modules';
+import styles from './LoginForm.scss';
 
 const LoginForm = ({ authStatus, onLoginBtnClick }) => {
   let content = null;
@@ -29,4 +30,4 @@ LoginForm.propTypes = {
   onLoginBtnClick: PropTypes.func.isRequired
 };
 
-export default LoginForm;
+export default CSSModules(LoginForm, styles);
