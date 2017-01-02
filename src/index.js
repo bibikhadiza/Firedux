@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import { Router } from 'react-router';
-import { loginSuccess, logout } from './actions';
+import { loginSuccess, logout } from './auth/actions';
 import C from './constants'
 import { routes } from './router.js';
 import { store, history } from './store.js';

@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
-import { logout } from '../actions';
-import Main from '../components/Main';
+import { logout } from '../auth/actions';
+import Main from './components/Main';
 import C from '../constants';
 
 const mapStateToProps = state => {

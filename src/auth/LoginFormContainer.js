@@ -1,8 +1,8 @@
 import firebase from 'firebase';
 import { connect } from 'react-redux';
-import { loginRequest } from '../actions';
-import LoginForm from '../components/LoginForm';
-import C from '../constants';
+import { loginRequest } from './actions';
+import LoginForm from './components/LoginForm';
+import C from '../constants'; // firebase
 
 const mapStateToProps = state => {
   return {
@@ -30,6 +30,10 @@ const mapDispatchToProps = dispatch => {
 
         case 'twitter':
           authProvider = new firebase.auth.TwitterAuthProvider();
+          break;
+
+        case 'github':
+          authProvider = new firebase.auth.GithubAuthProvider();
           break;
 
         default:

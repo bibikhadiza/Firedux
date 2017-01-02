@@ -1,0 +1,26 @@
+.btn-group {
+  padding-bottom: 12px;
+}
+
+.btn:not(.disabled) {
+  height: 39px;
+  width: 12em;
+  text-align: left;
+  line-height: 180%;
+}
+
+.btn.disabled {
+  font-size: 18px;
+  width: 3em;
+}
+
+.btn-github {
+  background-color: #434A54;
+  border-color: #434A54;
+  color: #FFF;
+  &:hover, &:focus, &:active, &.active {
+    background-color: #383e46;
+    border-color: #2c3138;
+    color: #FFF;
+  }
+}

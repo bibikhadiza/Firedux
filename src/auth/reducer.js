@@ -1,5 +1,5 @@
 import Immutable from 'immutable';
-import C from '../constants';
+import C from './constants';
 
 const initialState = Immutable.Map({
   authProvider: null,

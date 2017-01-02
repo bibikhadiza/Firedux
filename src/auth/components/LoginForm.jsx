@@ -3,17 +3,18 @@ import C from '../constants';
 import SigninBtns from './SigninBtns';
 // Styling
 import { Card, CardActions, CardTitle, CardText } from 'material-ui/Card';
+require('./LoginForm.scss');
 
 const LoginForm = ({ authStatus, onLoginBtnClick }) => {
   let content = null;
   if (authStatus !== C.LOGGED_IN) {
     content = (
-      <Card>
-        <CardTitle title='React Redux Firebase Project' />
-        <CardText>
+      <Card className='login-form'>
+        <CardTitle className='title' title='Firedux Project' />
+        <CardText className='description'>
           A short overview of the project (but longer is fine).
         </CardText>
-        <CardActions className='LoginBtns'>
+        <CardActions>
           <SigninBtns handleClick={onLoginBtnClick} />
         </CardActions>
       </Card>

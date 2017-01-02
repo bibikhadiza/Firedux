@@ -1,4 +1,5 @@
 import React, { Component, PropTypes } from 'react';
+import { connect } from 'react-redux';
 
 class App extends Component {
 
@@ -29,4 +30,11 @@ class App extends Component {
   }
 }
 
-export default App;
+const mapStateToProps = (state, ownProps) => {
+  return {
+    ...ownProps,
+    authStatus: state.getIn(['auth', 'authStatus'])
+  };
+};
+
+export default connect(mapStateToProps)(App);

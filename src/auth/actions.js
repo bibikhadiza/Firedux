@@ -19,7 +19,7 @@ export const loginSuccess = (user, nextPath = '/') => {
   };
 };
 
-export const logout = (nextPath = '/') => {
+export const logout = (nextPath = '/login') => {
   browserHistory.replace(nextPath);
   return {
     type: C.LOGOUT,

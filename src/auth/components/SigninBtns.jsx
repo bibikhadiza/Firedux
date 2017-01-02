@@ -1,4 +1,5 @@
 import React from 'react';
+require('./SigninBtns.scss');
 
 const SigninBtns = props => {
   return (
@@ -12,6 +13,7 @@ const SigninBtns = props => {
           Sign in with Google
         </a>
       </div>
+
       <div className="btn-group">
         <a className="btn btn-primary disabled">
           <i className="fa fa-facebook" />
@@ -21,6 +23,7 @@ const SigninBtns = props => {
           Sign in with Facebook
         </a>
       </div>
+
       <div className="btn-group">
         <a className="btn btn-info disabled">
           <i className="fa fa-twitter" />
@@ -28,6 +31,16 @@ const SigninBtns = props => {
         <a className="btn btn-info"
            onClick={ e => props.handleClick(e, 'twitter')}>
           Sign in with Twitter
+        </a>
+      </div>
+
+      <div className="btn-group">
+        <a className="btn btn-github disabled">
+          <i className="fa fa-github" />
+        </a>
+        <a className="btn btn-github"
+           onClick={ e => props.handleClick(e, 'github')}>
+          Sign in with Github
         </a>
       </div>
     </div>
