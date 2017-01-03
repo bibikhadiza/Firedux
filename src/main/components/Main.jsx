@@ -1,7 +1,4 @@
 import React, { Component, PropTypes } from 'react';
-// Styling
-import RaisedButton from 'material-ui/RaisedButton';
-import ExitToApp from 'material-ui/svg-icons/action/exit-to-app';
 
 class Main extends Component {
 
@@ -14,12 +11,7 @@ class Main extends Component {
   render() {
     return (
       <div>
-        <RaisedButton
-          label="Log out"
-          primary={true}
-          icon={<ExitToApp />}
-          onClick={ this.props.logout }
-        />
+        Hello World!
      </div>
     );
   }

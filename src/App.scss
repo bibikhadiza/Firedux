@@ -1,0 +1,19 @@
+footer {
+  background: #00ACC1;
+  position: fixed;
+  bottom: 0px;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 10px 15px;
+  color: #FFF;
+  font-size: 0.9em;
+  text-transform: uppercase;
+  text-align: right;
+  a {
+    color: #FFF;
+    &:hover {
+      color: #E8F5E9;
+      text-decoration: none;
+    }
+  };
+}

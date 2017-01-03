@@ -11,6 +11,7 @@ const LoginForm = ({ authStatus, onLoginBtnClick }) => {
   if (authStatus !== C.LOGGED_IN) {
     content = (
       <Card className='login-form'>
+        <div className="ribbon"><span>TRY IT FREE</span></div>
         <CardTitle className='title' title='Firedux Project' />
         <CardText className='description'>
           A short overview of the project (but longer is fine).

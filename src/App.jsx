@@ -1,5 +1,8 @@
 import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
+import HeaderContainer from './header/HeaderContainer';
+import CSSModules from 'react-css-modules';
+import styles from './App.scss';
 
 class App extends Component {
 
@@ -20,9 +23,18 @@ class App extends Component {
   render() {
     let content = (
       <div>
+        <HeaderContainer location={ this.props.location } />
+
         <main>
           { this.pageContent() }
         </main>
+
+        <footer>
+          © <a href='https://github.com/raycent/firedux'
+               target='_blank'> FIREDUX</a> 2016. Made with 🍀 by
+          <a href='https://www.linkedin.com/in/raycenttan'
+             target='_blank'> Raycent Tan</a>
+        </footer>
       </div>
     );
 
@@ -37,4 +49,4 @@ const mapStateToProps = (state, ownProps) => {
   };
 };
 
-export default connect(mapStateToProps)(App);
+export default CSSModules(connect(mapStateToProps)(App), styles);
