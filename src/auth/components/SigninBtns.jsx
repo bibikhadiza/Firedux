@@ -1,6 +1,6 @@
 import React from 'react';
 import CSSModules from 'react-css-modules';
-import styles from './SigninBtns.scss';
+import styles from './styles/SigninBtns.scss';
 
 const SigninBtns = props => {
   return (

@@ -16,6 +16,7 @@ const mapStateToProps = (state, ownProps) => {
 const mapDispatchToProps = dispatch => {
   return {
     logout: e => {
+      e.preventDefault();
       C.FIREBASE.auth().signOut().then(() => {
         dispatch(logout());
       });

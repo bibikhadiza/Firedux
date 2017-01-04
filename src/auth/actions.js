@@ -2,11 +2,10 @@ import { browserHistory } from 'react-router';
 import C from './constants';
 
 // Auth actions
-export const loginRequest = (method = 'google', nextPath = '/') => {
+export const loginRequest = (method = 'google') => {
   return {
     type: C.LOGIN_REQUEST,
-    method,
-    nextPath
+    method
   };
 };
 
@@ -19,7 +18,7 @@ export const loginSuccess = (user, nextPath = '/') => {
   };
 };
 
-export const logout = (nextPath = '/login') => {
+export const logout = (nextPath = '/') => {
   browserHistory.replace(nextPath);
   return {
     type: C.LOGOUT,

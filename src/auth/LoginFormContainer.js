@@ -14,7 +14,7 @@ const mapDispatchToProps = dispatch => {
   return {
     onLoginBtnClick: (e, method) => {
       e.preventDefault();
-      dispatch(loginRequest());
+      dispatch(loginRequest(method));
 
       let authProvider = null;
 
@@ -40,7 +40,7 @@ const mapDispatchToProps = dispatch => {
           break;
       }
 
-      C.FIREBASE.auth().signInWithRedirect(authProvider);
+      C.FIREBASE.auth().signInWithRedirect(authProvider).then(dispatch(loginRequest()));
     }
   };
 };

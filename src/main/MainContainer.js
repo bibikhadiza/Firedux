@@ -1,7 +1,5 @@
 import { connect } from 'react-redux';
-import { logout } from '../auth/actions';
 import Main from './components/Main';
-import C from '../constants';
 
 const mapStateToProps = state => {
   return {
@@ -9,20 +7,6 @@ const mapStateToProps = state => {
   };
 };
 
-const mapDispatchToProps = dispatch => {
-  return {
-    logout: e => {
-      e.preventDefault();
-      C.FIREBASE.auth().signOut().then(() => {
-        dispatch(logout());
-      });
-    }
-  };
-}
-
-const MainContainer = connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(Main);
+const MainContainer = connect(mapStateToProps)(Main);
 
 export default MainContainer;

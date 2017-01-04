@@ -1,4 +1,6 @@
 import React, { Component, PropTypes } from 'react';
+import LoginFormContainer from '../../auth/LoginFormContainer';
+import C from '../../auth/constants';
 
 class Main extends Component {
 
@@ -9,11 +11,11 @@ class Main extends Component {
   };
 
   render() {
-    return (
-      <div>
-        Hello World!
-     </div>
-    );
+    if (this.props.authStatus === C.LOGGED_IN) {
+      return null;
+    } else {
+      return <LoginFormContainer />
+    }
   }
 };
 

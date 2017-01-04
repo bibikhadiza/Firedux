@@ -4,7 +4,7 @@ import SigninBtns from './SigninBtns';
 // Styling
 import { Card, CardActions, CardTitle, CardText } from 'material-ui/Card';
 import CSSModules from 'react-css-modules';
-import styles from './LoginForm.scss';
+import styles from './styles/LoginForm.scss';
 
 const LoginForm = ({ authStatus, onLoginBtnClick }) => {
   let content = null;

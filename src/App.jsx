@@ -1,8 +1,9 @@
 import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
 import HeaderContainer from './header/HeaderContainer';
-import CSSModules from 'react-css-modules';
-import styles from './App.scss';
+import Footer from './footer/Footer';
+import Loader from './loader/components/Loader';
+import C from './auth/constants';
 
 class App extends Component {
 
@@ -15,38 +16,40 @@ class App extends Component {
   }
 
   pageContent() {
-    return (React.cloneElement(this.props.children, {
-      key: this.props.location.pathname
-    }));
+    if (!this.props.dataLoading) {
+      return React.cloneElement(this.props.children, {
+        key: this.props.location.pathname
+      });
+    };
+    return <Loader />;
   }
 
   render() {
-    let content = (
-      <div>
-        <HeaderContainer location={ this.props.location } />
+    console.log(this.props.authStatus);
+    if (this.props.authStatus !== C.LOGGING_IN) {
+      return (
+        <div>
+          <HeaderContainer location={ this.props.location } />
 
-        <main>
-          { this.pageContent() }
-        </main>
+          <main>
+            { this.pageContent() }
+          </main>
 
-        <footer>
-          © <a href='https://github.com/raycent/firedux'
-               target='_blank'> FIREDUX</a> 2016. Made with 🍀 by
-          <a href='https://www.linkedin.com/in/raycenttan'
-             target='_blank'> Raycent Tan</a>
-        </footer>
-      </div>
-    );
+          <Footer />
+        </div>
+      );
+    };
 
-    return content;
+    return <Loader />;
   }
 }
 
 const mapStateToProps = (state, ownProps) => {
   return {
     ...ownProps,
-    authStatus: state.getIn(['auth', 'authStatus'])
+    authStatus: state.getIn(['auth', 'authStatus']),
+    dataLoading: state.get('dataLoading')
   };
 };
 
-export default CSSModules(connect(mapStateToProps)(App), styles);
+export default connect(mapStateToProps)(App);

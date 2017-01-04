@@ -3,7 +3,7 @@ import C from './constants';
 
 const initialState = Immutable.Map({
   authProvider: null,
-  authStatus: C.LOGGED_OUT,
+  authStatus: C.LOGGING_IN,
   uid: null,
   userName: null,
   email: null,
@@ -15,7 +15,11 @@ const authReducer = (currentState = initialState, action) => {
   switch(action.type) {
 
     case C.LOGIN_REQUEST:
-      return currentState.update('authProvider', v => C.LOGGING_IN);
+    console.log('im in reducer-logging');
+      return currentState.merge(Immutable.Map({
+        authProvider: action.method,
+        authStatus: C.LOGGING_IN
+      }));
 
     case C.LOGIN_SUCCESS:
       return currentState.merge(Immutable.Map({
@@ -27,7 +31,15 @@ const authReducer = (currentState = initialState, action) => {
       }));
 
     case C.LOGOUT:
-      return initialState;
+    console.log('im in reducer logged out');
+      return currentState.merge(Immutable.Map({
+        authProvider: null,
+        authStatus: C.LOGGED_OUT,
+        uid: null,
+        userName: null,
+        email: null,
+        photoURL: null
+      }));
 
     default:
       return currentState;
