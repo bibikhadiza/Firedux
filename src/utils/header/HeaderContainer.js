@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import Header from './Header';
-import { logout } from '../auth/actions';
-import C from '../constants';
+import { logout } from '../../auth/actions';
+import C from '../../constants';
 
 const mapStateToProps = (state, ownProps) => {
   return {

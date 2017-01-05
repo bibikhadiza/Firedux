@@ -1,5 +1,5 @@
 import React, { Component, PropTypes } from 'react';
-import C from '../auth/constants';
+import C from '../../auth/constants';
 // Styling
 import AppBar from 'material-ui/AppBar';
 import Avatar from 'material-ui/Avatar';

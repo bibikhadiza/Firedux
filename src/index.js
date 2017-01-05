@@ -27,7 +27,6 @@ ReactDOM.render(
 // Start listening to firebase auth changes.
 C.FIREBASE.auth().onAuthStateChanged(user => {
   if (user) {
-    console.log('loggedin from index 1');
     store.dispatch(loginSuccess(user));
   } else {
     store.dispatch(logout());

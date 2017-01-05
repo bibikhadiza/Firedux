@@ -15,7 +15,6 @@ const authReducer = (currentState = initialState, action) => {
   switch(action.type) {
 
     case C.LOGIN_REQUEST:
-    console.log('im in reducer-logging');
       return currentState.merge(Immutable.Map({
         authProvider: action.method,
         authStatus: C.LOGGING_IN
@@ -31,7 +30,6 @@ const authReducer = (currentState = initialState, action) => {
       }));
 
     case C.LOGOUT:
-    console.log('im in reducer logged out');
       return currentState.merge(Immutable.Map({
         authProvider: null,
         authStatus: C.LOGGED_OUT,

@@ -1,9 +1,9 @@
 import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
-import HeaderContainer from './header/HeaderContainer';
-import Footer from './footer/Footer';
-import Loader from './loader/components/Loader';
-import C from './auth/constants';
+import HeaderContainer from '../utils/header/HeaderContainer';
+import Footer from '../utils/footer/Footer';
+import Loader from '../utils/loader/Loader';
+import C from '../auth/constants';
 
 class App extends Component {
 
@@ -25,7 +25,6 @@ class App extends Component {
   }
 
   render() {
-    console.log(this.props.authStatus);
     if (this.props.authStatus !== C.LOGGING_IN) {
       return (
         <div>

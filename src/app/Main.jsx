@@ -1,6 +1,6 @@
 import React, { Component, PropTypes } from 'react';
-import LoginFormContainer from '../../auth/LoginFormContainer';
-import C from '../../auth/constants';
+import LoginFormContainer from '../auth/LoginFormContainer';
+import C from '../auth/constants';
 
 class Main extends Component {
 
